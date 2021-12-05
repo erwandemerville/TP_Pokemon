@@ -1,0 +1,11 @@
+Bulbizarre	Plante,Poison	45	49	49
+Charge,50	Rugissement,attaque-e,5	Vampigraine,drainage,3
+
+Carapuce	Eau	44	48	65
+Charge,50	Mini-Queue,defense-e,5	Repli,defense+,11
+
+Pikachu	Electr	35	55	30
+Eclair,40	Cage-Eclair,paralysie,2	Vive-attaque,40
+
+Rattata	Normal	30	56	35
+Morsure,60	Croc,65	Mimi-Queue,defense-e,10
