@@ -4,7 +4,7 @@
 
 * [docs](./docs) - Dossier contenant les fichiers pour [la page Github](https://erwandemerville.github.io/TP_Pokemon).
 
-  
+---
 
 * [main.py](./main.py) - Fichier **principal** du programme, à exécuter pour lancer le jeu.
 
