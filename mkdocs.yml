@@ -1,2 +1,7 @@
 site_name: TP Classes - Pokemon
 site_url: https://erwandemerville.github.io/TP_Pokemon/
+nav:
+    - Notes: index.md
+    - Enoncé TP: TP.pdf
+    - Télécharger corrigé: TP_Pokemon.zip
+    - Tester code: https://replit.com/@erwandemerville/TP-Classes-Pokemon
