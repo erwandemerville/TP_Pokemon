@@ -1,5 +1,10 @@
 # TP Classes - Pokémon
 
+Vous pouvez :
+
+* [Cliquer-ici](TP_Pokemons.zip) pour **télécharger** le code corrigé du TP.
+* [Cliquer-ici](https://replit.com/@erwandemerville/TP-Classes-Pokemon) pour **tester le code en ligne**.
+
 ## Pour le groupe de jeudi matin
 Cette version du code contient quelques modifications par rapport à votre version :
 * L'attribut `_etat` de la classe **Pokemon** a été remplacé par un dictionnaire (au lieu d'utiliser un tuple).
