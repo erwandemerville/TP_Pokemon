@@ -24,9 +24,28 @@
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href=".">TP Classes - Pokemon</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
                 <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">Notes</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="TP.pdf" class="nav-link">Enoncé TP</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="TP_Pokemon.zip" class="nav-link">Télécharger corrigé</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://replit.com/@erwandemerville/TP-Classes-Pokemon" class="nav-link">Tester code</a>
+                            </li>
+                        </ul>
 
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item">
@@ -34,6 +53,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="TP.pdf" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -80,15 +109,17 @@
 <h1 id="tp-classes-pokemon">TP Classes - Pokémon</h1>
 <p>Vous pouvez :</p>
 <ul>
-<li><a href="TP_Pokemon.zip">Cliquer ici</a> pour <strong>télécharger</strong> le code corrigé du TP.</li>
+<li><a href="TP_Pokemon.zip">Cliquer ici</a> pour <strong>télécharger</strong> le <strong>code corrigé</strong> du TP.</li>
 <li><a href="https://replit.com/@erwandemerville/TP-Classes-Pokemon">Cliquer ici</a> pour <strong>tester le code en ligne</strong>.</li>
 </ul>
 <h2 id="pour-le-groupe-de-jeudi-matin">Pour le groupe de jeudi matin</h2>
-<p>Cette version du code contient quelques modifications par rapport à votre version :
-* L'attribut <code>_etat</code> de la classe <strong>Pokemon</strong> a été remplacé par un dictionnaire (au lieu d'utiliser un tuple).
-    * Au lieu d'avoir par exemple <code>('normal', 0)</code>, on a <code>{"nom_etat": "normal"}</code>
-    * Au lieu d'avoir par exemple <code>('poison', 3)</code>, on a <code>{"nom_etat": "poison", "duree_etat": 3}</code></p>
+<p>Cette version du code contient quelques modifications par rapport à votre version :</p>
 <ul>
+<li>L'attribut <code>_etat</code> de la classe <strong>Pokemon</strong> a été remplacé par un dictionnaire (au lieu d'utiliser un tuple).<ul>
+<li>Au lieu d'avoir par exemple <code>('normal', 0)</code>, on a <code>{"nom_etat": "normal"}</code></li>
+<li>Au lieu d'avoir par exemple <code>('poison', 3)</code>, on a <code>{"nom_etat": "poison", "duree_etat": 3}</code></li>
+</ul>
+</li>
 <li>L'attribut <code>liste_attaques</code> de la classe <strong>Pokemon</strong> a été remplacé par une liste de dictionnaires (au lieu d'une liste de listes) :<ul>
 <li>Au lieu d'avoir par exemple :<br />
 <code>[ ['Charge', 35], ['Rugissement', 'defense-e', 5] ]</code><br />
@@ -98,19 +129,25 @@ On a : <br />
 </li>
 </ul>
 <p>L'intérêt est de <strong>simplifier la compréhension</strong> du code.<br />
-Pour récupérer par exemple le nom de la <strong>deuxième</strong> attaque d'un Pokemon <strong>pkm</strong>, on écrira <code>pkm._liste_attaques[1]["nom_attaque"]</code>au lieu de <code>pkm._liste_attaques[1][0]</code>.</p>
+Pour récupérer par exemple le nom de la <strong>deuxième</strong> attaque d'un Pokemon <strong>pkm</strong>, on écrira <code>pkm._liste_attaques[1]["nom_attaque"]</code> au lieu de <code>pkm._liste_attaques[1][0]</code>.</p>
 <h2 id="pour-le-groupe-de-jeudi-apres-midi">Pour le groupe de jeudi après-midi</h2>
-<p>Il y avait deux erreurs dans la fonction <code>choixAttaque</code>de la classe <strong>Pokemon</strong> :
-* À la <strong>première ligne</strong>, vous devez avoir <code>i = 1</code> et non pas <code>i = 0</code>.
-* Au <strong>premier "print"</strong> (troisième ligne), remplacez <code>el[0]</code> par <code>el["nom_attaque"]</code>.
-* La ligne à compléter (la dernière) donne bien : <br />
-<code>return self._liste_attaques[int(choix) - 1]</code>.</p>
+<p>Il y avait deux erreurs dans la fonction <code>choixAttaque</code>de la classe <strong>Pokemon</strong> :</p>
+<ul>
+<li>À la <strong>première ligne</strong>, vous devez avoir <code>i = 1</code> et non pas <code>i = 0</code>.</li>
+<li>Au <strong>premier "print"</strong> (troisième ligne), remplacez <code>el[0]</code> par <code>el["nom_attaque"]</code>.</li>
+<li>La ligne à compléter (la dernière) donne bien : <br />
+<code>return self._liste_attaques[int(choix) - 1]</code>.</li>
+</ul>
 <h2 id="pour-tout-le-monde">Pour tout le monde</h2>
-<p>Dans la classe <strong>Jeu</strong> :
-* La fonction <code>deroulementTour</code> a été renommée en <code>deroulementCombat</code>.
-* Une fonction <code>soignerPokemons</code>a été ajoutée :
-    * Cette fonction est <strong>appelée avant chaque combat</strong> (première ligne de la fonction <code>deroulementCombat</code>) et permet de <strong>soigner tous les pokémons non morts</strong>,<br />
-    c'est à dire de restaurer leurs caractéristiques (pts de vie, attaque, défense) à leur état initial avant le prochain combat.</p>
+<p>Dans la classe <strong>Jeu</strong> :</p>
+<ul>
+<li>La fonction <code>deroulementTour</code> a été renommée en <code>deroulementCombat</code>.</li>
+<li>Une fonction <code>soignerPokemons</code>a été ajoutée :<ul>
+<li>Cette fonction est <strong>appelée avant chaque combat</strong> (première ligne de la fonction <code>deroulementCombat</code>) et permet de <strong>soigner tous les pokémons non morts</strong>,<br />
+c'est-à-dire de restaurer leurs caractéristiques (pts de vie, attaque, défense) à leur état initial avant le prochain combat.</li>
+</ul>
+</li>
+</ul>
 <h2 id="questions">Questions ?</h2>
 <p>Si vous avez des remarques ou des questions, vous pouvez me contacter à l'adresse <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#114;&#119;&#97;&#110;&#46;&#100;&#101;&#109;&#101;&#114;&#118;&#105;&#108;&#108;&#101;&#46;&#101;&#116;&#117;&#64;&#117;&#110;&#105;&#118;&#45;&#108;&#105;&#108;&#108;&#101;&#46;&#102;&#114;">&#101;&#114;&#119;&#97;&#110;&#46;&#100;&#101;&#109;&#101;&#114;&#118;&#105;&#108;&#108;&#101;&#46;&#101;&#116;&#117;&#64;&#117;&#110;&#105;&#118;&#45;&#108;&#105;&#108;&#108;&#101;&#46;&#102;&#114;</a></p></div>
             </div>
@@ -193,5 +230,5 @@ Pour récupérer par exemple le nom de la <strong>deuxième</strong> attaque d'u
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2021-12-06 01:02:43.885161+00:00
+Build Date UTC : 2021-12-06 01:33:29.897531+00:00
 -->
