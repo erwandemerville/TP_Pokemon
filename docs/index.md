@@ -2,8 +2,8 @@
 
 Vous pouvez :
 
-* [Cliquer-ici](TP_Pokemons.zip) pour **télécharger** le code corrigé du TP.
-* [Cliquer-ici](https://replit.com/@erwandemerville/TP-Classes-Pokemon) pour **tester le code en ligne**.
+* [Cliquer ici](TP_Pokemon.zip) pour **télécharger** le code corrigé du TP.
+* [Cliquer ici](https://replit.com/@erwandemerville/TP-Classes-Pokemon) pour **tester le code en ligne**.
 
 ## Pour le groupe de jeudi matin
 Cette version du code contient quelques modifications par rapport à votre version :

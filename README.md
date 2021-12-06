@@ -1,8 +1,9 @@
-# Notes
+# Projet - Jeu Pokémon
 
-## Contenu de ce dossier :
+## Contenu :
 
-* [docs](./docs) - Dossier contenant les fichiers pour [la page Github](https://erwandemerville.github.io/TP_Pokemon).
+* [docs](./docs) - Dossier contenant les fichiers pour [la page Github](https://erwandemerville.github.io/TP_Pokemon) (créée avec MkDocs).
+* [mkdocs.yml](./mkdocs.yml) - Fichier de configuration de **MkDocs**.
 
 ---
 
