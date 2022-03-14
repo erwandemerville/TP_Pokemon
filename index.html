@@ -40,7 +40,10 @@
                                 <a href="TP.pdf" class="nav-link">Enoncé TP</a>
                             </li>
                             <li class="navitem">
-                                <a href="TP_Pokemon.zip" class="nav-link">Télécharger corrigé</a>
+                                <a href="TP_Pokemon.zip" class="nav-link">Télécharger code à trous</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="TP_Pokemon_Correction.zip" class="nav-link">Télécharger corrigé</a>
                             </li>
                             <li class="navitem">
                                 <a href="https://replit.com/@erwandemerville/TP-Classes-Pokemon" class="nav-link">Tester code</a>
@@ -83,22 +86,32 @@
             
             <li class="nav-item" data-level="1"><a href="#tp-classes-pokemon" class="nav-link">TP Classes - Pokémon</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#pour-le-groupe-de-jeudi-matin" class="nav-link">Pour le groupe de jeudi matin</a>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#realisation-dun-jeu-pokemon" class="nav-link">Réalisation d'un jeu Pokémon</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#objectif-du-tp" class="nav-link">Objectif du TP</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#pour-le-groupe-de-jeudi-apres-midi" class="nav-link">Pour le groupe de jeudi après-midi</a>
+            <li class="nav-item" data-level="2"><a href="#pre-requis" class="nav-link">Pré-requis</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#pour-tout-le-monde" class="nav-link">Pour tout le monde</a>
+            <li class="nav-item" data-level="2"><a href="#modelisation" class="nav-link">Modélisation</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#questions" class="nav-link">Questions ?</a>
+            <li class="nav-item" data-level="2"><a href="#realisation" class="nav-link">Réalisation</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#questions" class="nav-link">Questions ?</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -109,46 +122,117 @@
 <h1 id="tp-classes-pokemon">TP Classes - Pokémon</h1>
 <p>Vous pouvez :</p>
 <ul>
-<li><a href="TP_Pokemon.zip">Cliquer ici</a> pour <strong>télécharger</strong> le <strong>code corrigé</strong> du TP.</li>
+<li><a href="TP.pdf">Cliquer ici</a> pour <strong>accéder</strong> à l'<strong>énoncé du TP</strong> en <strong>PDF</strong>.</li>
+<li><a href="TP_Pokemon.zip">Cliquer ici</a> pour <strong>télécharger</strong> le <strong>code à trous</strong> du TP.</li>
+<li><a href="TP_Pokemon_Correction.zip">Cliquer ici</a> pour <strong>télécharger</strong> le <strong>corrigé</strong> du TP.</li>
 <li><a href="https://replit.com/@erwandemerville/TP-Classes-Pokemon">Cliquer ici</a> pour <strong>tester le code en ligne</strong>.</li>
 </ul>
-<h2 id="pour-le-groupe-de-jeudi-matin">Pour le groupe de jeudi matin</h2>
-<p>Cette version du code contient quelques modifications par rapport à votre version :</p>
+<h1 id="realisation-dun-jeu-pokemon">Réalisation d'un jeu Pokémon</h1>
+<h2 id="objectif-du-tp">Objectif du TP</h2>
+<p>L'objectif de cette séance est de réaliser, en <strong>Python</strong>, un jeu de type RPG.
+En particulier, on s'inspirera du jeu <strong>Pokémon</strong>.</p>
+<p>Ce projet sera constitué des fichiers suivants :</p>
 <ul>
-<li>L'attribut <code>_etat</code> de la classe <strong>Pokemon</strong> a été remplacé par un dictionnaire (au lieu d'utiliser un tuple).<ul>
-<li>Au lieu d'avoir par exemple <code>('normal', 0)</code>, on a <code>{"nom_etat": "normal"}</code></li>
-<li>Au lieu d'avoir par exemple <code>('poison', 3)</code>, on a <code>{"nom_etat": "poison", "duree_etat": 3}</code></li>
+<li><strong>main.py</strong> - Programme principal permettant l'exécution du jeu</li>
+<li><strong>jeu.py</strong> - Classe qui gère l'ensemble du jeu et réutilise les autres classes</li>
+<li><strong>combat.py</strong> - Classe permettant de représenter un combat du jeu</li>
+<li><strong>pokemon.py</strong> - Classe permettant de représenter les Pokémons</li>
+</ul>
+<p>Voici une capture de ce que l'on souhaite obtenir :</p>
+<p><img alt="Exécution du jeu" src="images/console.png" /></p>
+<h2 id="pre-requis">Pré-requis</h2>
+<p>Si nécessaire, vous pouvez relire le cours sur les classes <a href="http://www.planeteisn.fr/Structuresdonn%C3%A9es6.html">en cliquant ici</a>.</p>
+<p>Les notions d'<strong>objets</strong>, d'<strong>attributs</strong>, de <strong>méthodes</strong>, de <strong>constructeur</strong> notamment doivent vous être familières.</p>
+<h2 id="modelisation">Modélisation</h2>
+<p>Voici une modélisation sous forme de diagramme des différentes classes constituant ce projet :</p>
+<p><img alt="Modélisation des classes du jeu" src="images/Jeu_Pokemon.drawio.png" /></p>
+<p><strong>Notes</strong> :</p>
+<p>Les données sur les pokémons sont stockées dans un fichier <code>pokemons.txt</code>.</p>
+<p>L'inscription d'un pokémon se fait de la manière suivante :</p>
+<pre><code>Bulbizarre  Plante,Poison   45  49  49
+Charge,50   Rugissement,attaque-e,5 Vampigraine,drainage,3
+</code></pre>
+<p><strong>Chaque donnée est séparée par une tabulation</strong>.
+La première ligne renseigne les données principales sur le Pokémon : Son <strong>nom</strong>, ses <strong>types</strong>, son <strong>nombre de vies</strong>, son <strong>attaque</strong> et enfin sa <strong>défense</strong>.<br />
+La deuxième ligne contient <strong>les attaques du pokémon</strong>.</p>
+<p>S'il s'agit d'une attaque qui inflige simplement des dégâts, on l'écrit sous la forme :
+<code>Nom_de_lattaque,puissance</code> (donc seulement deux éléments)</p>
+<p>S'il s'agit d'une attaque qui n'inflige pas de dégâts mais effectue une autre action, ou inflige une altération d'état, on écrira sous la forme suivante (3 éléments) :<br />
+<code>Nom_attaque,poison,3</code> : Empoisonnement pendant 3 tours (par exemple)<br />
+<code>Nom_attaque,attaque+,10</code> : <strong>Augmenter</strong> de <strong>10</strong> points l'attaque du pokémon <strong>allié</strong><br />
+<code>Nom_attaque,defense-e,10</code> : <strong>Diminuer</strong> de <strong>10</strong> points la défense du pokémon <strong>ennemi</strong>.<br /></p>
+<p>Pour l'instant, il existe :</p>
+<ul>
+<li><code>poison</code> : Empoisonner l'ennemi</li>
+<li><code>paralysie</code> : Paralyser l'ennemi</li>
+<li><code>drainage</code> : Drainer la vie de l'ennemi (même effet que poison)</li>
+<li><code>attaque+, attaque-, defense+, defense-</code> : Augmenter/Diminuer l'attaque ou la défense</li>
+<li><code>attaque-e, defense-e</code> : Diminuer l'attaque ou la défense ennemie.</li>
+<li>Rien ne vous empêche de rajouter de nouveaux effets, si vous vous sentez capable de les rajouter dans le code.</li>
+</ul>
+<p>Les attaques de chaque <code>Pokemon</code> seront enregistrées dans l'attribut <code>_liste_attaques</code> sous forme d'une <strong>liste de dictionnaires</strong>.<br />
+Par exemple, s'il y a 2 attaques : <code>[{"nom_attaque": "Charge", "degats_attaque": 35}, {"nom_attaque": "Rugissement", "effet_attaque": "attaque-e", "valeur_attaque": 5}]</code></p>
+<ul>
+<li>La première attaque "Charge" a une <strong>puissance de 35</strong>.</li>
+<li>La seconde attaque "Rugissement" <strong>diminue l'attaque de l'ennemi de 5 points</strong>.</li>
+<li>L'état du pokémon sera stockée sous la forme d'un <strong>dictionnaire</strong>.<ul>
+<li>Initialement, l'attribut <code>_etat</code> sera égal à <code>{"nom_etat": "normal"}</code> =&gt; Cela indique que le pokémon est dans son <strong>état</strong> <strong>normal</strong>.</li>
+<li>S'il est empoisonné par exemple, <code>_etat</code> sera égal à <code>{"nom_etat": "poison", "duree_etat": 3}</code> =&gt; Empoisonnement <strong>pendant encore 3 tours</strong>. (Même principe pour la <strong>paralysie</strong>, ou le <strong>drainage</strong>).</li>
 </ul>
 </li>
-<li>L'attribut <code>liste_attaques</code> de la classe <strong>Pokemon</strong> a été remplacé par une liste de dictionnaires (au lieu d'une liste de listes) :<ul>
-<li>Au lieu d'avoir par exemple :<br />
-<code>[ ['Charge', 35], ['Rugissement', 'defense-e', 5] ]</code><br />
-On a : <br />
-<code>[ {"nom_attaque": "Charge", "degats_attaque": 35}, {"nom_attaque": "Rugissement", "nom_effet": "attaque-e", "valeur_effet": 5} ]</code>.</li>
+<li>Vous pouvez <strong>ajouter de nouveaux pokémons</strong> dans le fichier <code>pokemons.txt</code>, en respectant bien le format.
+  Vous pouvez créer vos propres pokémons ou vous inspirer du pokédex :</li>
 </ul>
+<p><a href="https://www.pokebip.com/pokedex/pokedex_5G_liste_des_pokemon.html">https://www.pokebip.com/pokedex/pokedex_5G_liste_des_pokemon.html</a></p>
+<h2 id="realisation">Réalisation</h2>
+<p>Ouvrez le dossier <code>Projet_Pokemon</code>.</p>
+<p>A l'intérieur, vous trouverez des fichiers pré-remplis, que vous devrez compléter.
+Les zones à complétez sont marquées par des pointillés <code>.........</code>.</p>
+<ul>
+<li>Pensez à <strong>écrire la docstring</strong> de vos fonctions.</li>
+<li>Certaines fonctions sont <strong>déjà</strong> entièrement <strong>écrites</strong>, et il vous sera dans ce cas demandé d'<strong>écrire la docstring</strong> pour vérifier votre compréhension.</li>
+<li>D'autres fonctions <strong>contiennent uniquement la docstring</strong>, qui vous aidera à écrire le corps de la fonction.
+  Lisez bien les docstrings et les commentaires pour vous assurer de bien comprendre le fonctionnement du projet !</li>
+</ul>
+<hr />
+<h3 id="deroulement-du-jeu">Déroulement du jeu</h3>
+<p>Le jeu, défini dans la classe <code>Jeu</code>, se déroule <strong>indéfiniment</strong> et ne s'arrête que si :</p>
+<ul>
+<li>Tous les pokémons du jeu sont morts</li>
+<li>Le nombre de victoires correspond à la valeur de la variable globale NB_VICTOIRES</li>
+<li>Le nombre de défaites correspond à la valeur de la variable globale NB_DEFAITES</li>
+</ul>
+<p>Si aucune de ces conditions n'est remplie :</p>
+<ul>
+<li>
+<p>On demande au joueur de choisir un pokémon parmi les pokémons encore vivants du jeu</p>
+</li>
+<li>
+<p>L'adversaire choisit un pokémon de manière aléatoire</p>
+</li>
+<li>
+<p>On <strong>lance un combat</strong>.</p>
+</li>
+<li>
+<p>A la fin du combat, en cas de victoire, on incrémente la valeur du nombre de victoires, en cas de défaite, on incrémente la valeur du nombre de défaites.</p>
+</li>
+<li>
+<p>On recommence le même déroulement tant qu'aucune des 3 conditions définies précédemment n'est remplie.</p>
 </li>
 </ul>
-<p>L'intérêt est de <strong>simplifier la compréhension</strong> du code.<br />
-Pour récupérer par exemple le nom de la <strong>deuxième</strong> attaque d'un Pokemon <strong>pkm</strong>, on écrira <code>pkm._liste_attaques[1]["nom_attaque"]</code> au lieu de <code>pkm._liste_attaques[1][0]</code>.</p>
-<h2 id="pour-le-groupe-de-jeudi-apres-midi">Pour le groupe de jeudi après-midi</h2>
-<p>Il y avait deux erreurs dans la fonction <code>choixAttaque</code>de la classe <strong>Pokemon</strong> :</p>
+<h3 id="deroulement-dun-combat">Déroulement d'un combat</h3>
+<p>Pour vous aider à comprendre, voici une explication du déroulement d'un combat (méthode <code>jouer</code> de la classe <code>Combat</code>) :</p>
 <ul>
-<li>À la <strong>première ligne</strong>, vous devez avoir <code>i = 1</code> et non pas <code>i = 0</code>.</li>
-<li>Au <strong>premier "print"</strong> (troisième ligne), remplacez <code>el[0]</code> par <code>el["nom_attaque"]</code>.</li>
-<li>La ligne à compléter (la dernière) donne bien : <br />
-<code>return self._liste_attaques[int(choix) - 1]</code>.</li>
+<li>On <strong>vérifie</strong> si le pokémon du joueur est <strong>mort</strong>. Si oui, fin du combat, avec un message de défaite.</li>
+<li>Sinon, on <strong>vérifie</strong> si le pokémon de l'ennemi est <strong>mort</strong>. Si oui, <strong>fin du combat, avec message de victoire</strong>.</li>
+<li>Si aucun pokémon n'est mort :</li>
+<li>On affiche les infos sur les pokémon (points de vies, état, attaque, défense...)</li>
+<li>On active les effets relatifs aux altérations d'état.</li>
+<li>Si c'est au tour du joueur, le joueur choisit une attaque.</li>
+<li>Si c'est au tour du joueur adversaire, l'attaque est choisie aléatoirement.</li>
+<li>A la fin, on incrémente le nombre de tours</li>
 </ul>
-<h2 id="pour-tout-le-monde">Pour tout le monde</h2>
-<p>Dans la classe <strong>Jeu</strong> :</p>
-<ul>
-<li>La fonction <code>deroulementTour</code> a été renommée en <code>deroulementCombat</code>.</li>
-<li>Une fonction <code>soignerPokemons</code>a été ajoutée :<ul>
-<li>Cette fonction est <strong>appelée avant chaque combat</strong> (première ligne de la fonction <code>deroulementCombat</code>) et permet de <strong>soigner tous les pokémons non morts</strong>,<br />
-c'est-à-dire de restaurer leurs caractéristiques (pts de vie, attaque, défense) à leur état initial avant le prochain combat.</li>
-</ul>
-</li>
-</ul>
-<h2 id="questions">Questions ?</h2>
+<h1 id="questions">Questions ?</h1>
 <p>Si vous avez des remarques ou des questions, vous pouvez me contacter à l'adresse <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#114;&#119;&#97;&#110;&#46;&#100;&#101;&#109;&#101;&#114;&#118;&#105;&#108;&#108;&#101;&#46;&#101;&#116;&#117;&#64;&#117;&#110;&#105;&#118;&#45;&#108;&#105;&#108;&#108;&#101;&#46;&#102;&#114;">&#101;&#114;&#119;&#97;&#110;&#46;&#100;&#101;&#109;&#101;&#114;&#118;&#105;&#108;&#108;&#101;&#46;&#101;&#116;&#117;&#64;&#117;&#110;&#105;&#118;&#45;&#108;&#105;&#108;&#108;&#101;&#46;&#102;&#114;</a></p></div>
             </div>
         </div>
@@ -230,5 +314,5 @@ c'est-à-dire de restaurer leurs caractéristiques (pts de vie, attaque, défens
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2021-12-06 14:09:11.536126+00:00
+Build Date UTC : 2022-03-14 03:49:09.402431+00:00
 -->
