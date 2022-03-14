@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from random  # Module random pour générer des valeurs aléatoires (avec random.choice)
+import random  # Module random pour générer des valeurs aléatoires (avec random.choice)
 
 
 class PokemonError(Exception):
