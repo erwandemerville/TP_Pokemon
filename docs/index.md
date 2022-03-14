@@ -23,7 +23,7 @@ Ce projet sera constitué des fichiers suivants :
 
 Voici une capture de ce que l'on souhaite obtenir :
 
-![Exécution du jeu](images/console.png){ width=50% }
+![Exécution du jeu](images/console.png)
 
 ## Pré-requis
 
@@ -35,54 +35,51 @@ Les notions d'**objets**, d'**attributs**, de **méthodes**, de **constructeur**
 
 Voici une modélisation sous forme de diagramme des différentes classes constituant ce projet :
 
-![Modélisation des classes du jeu](images/Jeu_Pokemon.drawio.png){ width=100% }
+![Modélisation des classes du jeu](images/Jeu_Pokemon.drawio.png)
 
 **Notes** :
 
-* Les données sur les pokémons sont stockées dans un fichier `pokemons.txt`.
+Les données sur les pokémons sont stockées dans un fichier `pokemons.txt`.
 
-  L'inscription d'un pokémon se fait de la manière suivante :
+L'inscription d'un pokémon se fait de la manière suivante :
 
-  ```
-  Bulbizarre	Plante,Poison	45	49	49
-  Charge,50	Rugissement,attaque-e,5	Vampigraine,drainage,3
-  ```
+```
+Bulbizarre	Plante,Poison	45	49	49
+Charge,50	Rugissement,attaque-e,5	Vampigraine,drainage,3
+```
 
-  **Chaque donnée est séparée par une tabulation**.
-  La première ligne renseigne les données principales sur le Pokémon : Son **nom**, ses **types**, son **nombre de vies**, son **attaque** et enfin sa **défense**.
-  La deuxième ligne contient **les attaques du pokémon**.
+**Chaque donnée est séparée par une tabulation**.
+La première ligne renseigne les données principales sur le Pokémon : Son **nom**, ses **types**, son **nombre de vies**, son **attaque** et enfin sa **défense**.<br />
+La deuxième ligne contient **les attaques du pokémon**.
 
-  S'il s'agit d'une attaque qui inflige simplement des dégâts, on l'écrit sous la forme :
-  `Nom_de_lattaque,puissance` (donc seulement deux éléments)
+S'il s'agit d'une attaque qui inflige simplement des dégâts, on l'écrit sous la forme :
+`Nom_de_lattaque,puissance` (donc seulement deux éléments)
 
-  S'il s'agit d'une attaque qui n'inflige pas de dégâts mais effectue une autre action, ou inflige une altération d'état, on écrira sous la forme suivante (3 éléments) :
-  `Nom_attaque,poison,3 ` : Empoisonnement pendant 3 tours (par exemple)
-  `Nom_attaque,attaque+,10` : **Augmenter** de **10** points l'attaque du pokémon **allié**
-  `Nom_attaque,defense-e,10` : **Diminuer** de **10** points la défense du pokémon **ennemi**.
+S'il s'agit d'une attaque qui n'inflige pas de dégâts mais effectue une autre action, ou inflige une altération d'état, on écrira sous la forme suivante (3 éléments) :<br />
+`Nom_attaque,poison,3 ` : Empoisonnement pendant 3 tours (par exemple)<br />
+`Nom_attaque,attaque+,10` : **Augmenter** de **10** points l'attaque du pokémon **allié**<br />
+`Nom_attaque,defense-e,10` : **Diminuer** de **10** points la défense du pokémon **ennemi**.<br />
 
-  Pour l'instant, il existe :
+Pour l'instant, il existe :
 
-  * `poison` : Empoisonner l'ennemi
-  * `paralysie` : Paralyser l'ennemi
-  * `drainage` : Drainer la vie de l'ennemi (même effet que poison)
-  * `attaque+, attaque-, defense+, defense-` : Augmenter/Diminuer l'attaque ou la défense
-  * `attaque-e, defense-e` : Diminuer l'attaque ou la défense ennemie.
-  * Rien ne vous empêche de rajouter de nouveaux effets, si vous vous sentez capable de les rajouter dans le code.
+* `poison` : Empoisonner l'ennemi
+* `paralysie` : Paralyser l'ennemi
+* `drainage` : Drainer la vie de l'ennemi (même effet que poison)
+* `attaque+, attaque-, defense+, defense-` : Augmenter/Diminuer l'attaque ou la défense
+* `attaque-e, defense-e` : Diminuer l'attaque ou la défense ennemie.
+* Rien ne vous empêche de rajouter de nouveaux effets, si vous vous sentez capable de les rajouter dans le code.
 
-  Les attaques de chaque `Pokemon` seront enregistrées dans l'attribut `_liste_attaques` sous forme d'une **liste de dictionnaires**.
-  Par exemple, s'il y a 2 attaques : `[{"nom_attaque": "Charge", "degats_attaque": 35}, {"nom_attaque": "Rugissement", "effet_attaque": "attaque-e", "valeur_attaque": 5}]`
+Les attaques de chaque `Pokemon` seront enregistrées dans l'attribut `_liste_attaques` sous forme d'une **liste de dictionnaires**.<br />
+Par exemple, s'il y a 2 attaques : `[{"nom_attaque": "Charge", "degats_attaque": 35}, {"nom_attaque": "Rugissement", "effet_attaque": "attaque-e", "valeur_attaque": 5}]`
 
-  * La première attaque "Charge" a une **puissance de 35**.
-  * La seconde attaque **diminue l'attaque de l'ennemi de 5 points**.
-
-* L'état du pokémon sera stockée sous la forme d'un **dictionnaire**.
-
-  * Initialement, l'attribut `_etat` sera égal à `{"nom_etat": "normal"}` => Cela indique que le pokémon est dans son **état** **normal**.
-  * S'il est empoisonné par exemple, `_etat` sera égal à `{"nom_etat": "poison", "duree_etat": 3}` => Empoisonnement **pendant encore 3 tours**. (Même principe pour la **paralysie**, ou le **drainage**).
-  
+* La première attaque "Charge" a une **puissance de 35**.
+* La seconde attaque "Rugissement" **diminue l'attaque de l'ennemi de 5 points**.
+  * L'état du pokémon sera stockée sous la forme d'un **dictionnaire**.
+    * Initialement, l'attribut `_etat` sera égal à `{"nom_etat": "normal"}` => Cela indique que le pokémon est dans son **état** **normal**.
+    * S'il est empoisonné par exemple, `_etat` sera égal à `{"nom_etat": "poison", "duree_etat": 3}` => Empoisonnement **pendant encore 3 tours**. (Même principe pour la **paralysie**, ou le **drainage**).
 * Vous pouvez **ajouter de nouveaux pokémons** dans le fichier `pokemons.txt`, en respectant bien le format.
   Vous pouvez créer vos propres pokémons ou vous inspirer du pokédex :
-  
+
    <https://www.pokebip.com/pokedex/pokedex_5G_liste_des_pokemon.html>
 
 ## Réalisation
@@ -115,9 +112,7 @@ Si aucune de ces conditions n'est remplie :
 
 * On **lance un combat**.
 
-* A la fin du combat, en cas de victoire, on incrémente la valeur du nombre de victoires,
-
-  en cas de défaite, on incrémente la valeur du nombre de défaites.
+* A la fin du combat, en cas de victoire, on incrémente la valeur du nombre de victoires, en cas de défaite, on incrémente la valeur du nombre de défaites.
 
 * On recommence le même déroulement tant qu'aucune des 3 conditions définies précédemment n'est remplie.
 
