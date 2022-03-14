@@ -3,5 +3,6 @@ site_url: https://erwandemerville.github.io/TP_Pokemon/
 nav:
     - Notes: index.md
     - Enoncé TP: TP.pdf
-    - Télécharger corrigé: TP_Pokemon.zip
+    - Télécharger code à trous: TP_Pokemon.zip
+    - Télécharger corrigé: TP_Pokemon_Correction.zip
     - Tester code: https://replit.com/@erwandemerville/TP-Classes-Pokemon

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from random import randint  # Module random pour générer des valeurs aléatoires (avec la fonction randint)
+from random  # Module random pour générer des valeurs aléatoires (avec random.choice)
 
 
 class PokemonError(Exception):
@@ -104,11 +104,11 @@ class Pokemon:
     # METHODES RELATIVES AUX ATTAQUES
 
     def choixAttaqueAleatoire(self):
-        """ Retourne les données d'une attaque (un dictionnaire de la liste _liste_attaques choisie aléatoirement).
-        COMPLETER LES POINTILLES - Nécessite la fonction randint, lisez sa documentation si vous ne savez pas l'utiliser
+        """ Retourne les données d'une attaque choisie aléatoirement.
+        COMPLETER LES POINTILLES - On souhaite retourner un élément de _liste_attaques aléatoire).
         """
 
-        attaque = self._liste_attaques[randint(0, len(self._liste_attaques) - 1)]
+        attaque = random.choice(self._liste_attaques)
         return attaque
 
     def choixAttaque(self):

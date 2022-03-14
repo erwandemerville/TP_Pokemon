@@ -166,7 +166,7 @@ class Jeu:
 
     def soignerPokemons(self):
         """ Fonction permettant de restaurer les caractéristiques (pts de vie, état, attaque, défense...)
-        de tous les pokémons encore en vie à leur état initial. """
+        de tous les pokémons encore en vie à leur état initial, en allant rechercher les éléments dans le fichier 'pokemons.txt'. """
 
         with open('pokemons.txt') as f:
             i = 0
